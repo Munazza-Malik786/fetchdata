@@ -52,7 +52,6 @@
 
   <script>
     const SHEET_URL = "https://docs.google.com/spreadsheets/d/1E6j2OwYMdrcTIkiYJy874TVeJEjmKDHGCzuStgDFADk/gviz/tq?tqx=out:json";
-
     document.getElementById("loginForm").addEventListener("submit", function(e){
       e.preventDefault();
       let email = document.getElementById("adminEmail").value;
@@ -71,10 +70,11 @@
             rows.forEach(row => {
               let tr = document.createElement("tr");
               tr.innerHTML = `
-                <td>${row.c[1]?.v || ""}</td>
-                <td>${row.c[2]?.v || ""}</td>
-                <td>${row.c[3]?.v || ""}</td>
-                <td>${row.c[4]?.v || ""}</td>
+                <td>${row.c[1]?.v || ""}</td>  <!-- Name -->
+                <td>${row.c[2]?.v || ""}</td>  <!-- Email -->
+                <td>${row.c[3]?.v || ""}</td>  <!-- Phone -->
+                <td>${row.c[4]?.v || ""}</td>  <!-- Message -->
+
               `;
               tableBody.appendChild(tr);
             });
